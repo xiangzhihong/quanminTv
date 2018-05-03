@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+//apply plugin: 'com.neenbedankt.android-apt'
+//apply from: 'tinker-support.gradle'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.xzh.kingtv"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation files('libs/pldroid-player-1.5.0.jar')
+
+//    annotationProcessor 'com.google.dagger:dagger-compiler:2.12'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:cardview-v7:27.1.1'
+    implementation 'com.hannesdorfmann.mosby:mvp:2.0.1'
+    implementation 'com.hannesdorfmann.mosby:viewstate:2.0.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'io.reactivex:rxjava:1.1.6'
+    implementation 'com.jude:easyrecyclerview:4.3.7'
+    implementation 'jp.wasabeef:glide-transformations:2.0.1'
+    implementation 'com.jakewharton:butterknife:8.5.1'
+//    apt 'com.jakewharton:butterknife-compiler:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    implementation 'com.google.dagger:dagger:2.9'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.9'
+//    apt 'com.google.dagger:dagger-compiler:2.9'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+    implementation 'org.greenrobot:greendao:3.2.0'
+    provided 'org.greenrobot:greendao-generator:3.2.0'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'com.king.base:base:2.0'
+    implementation 'com.king.thread:nevercrash:1.0.0'
+    implementation 'com.bigkoo:convenientbanner:2.0.5'
+    implementation 'com.qiniu:happy-dns:0.2.+'
+    // 多dex配置
+    implementation 'com.android.support:multidex:1.0.1'
+    //sdk
+    implementation 'com.tencent.bugly:crashreport_upgrade:latest.release'
+    //ndk
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+}
